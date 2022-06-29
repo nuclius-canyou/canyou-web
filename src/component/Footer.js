@@ -5,7 +5,7 @@ const Footer = () => {
       <div className='footer_container'>CanYou Inc. &copy; 2022</div>
       <div className='footer_container footer_links'>
         <p>
-          <a className='link' href='mailto:admin@canyou.app'>
+          <a className='link' href='mailto:support@canyouapp.com'>
             Support
           </a>
         </p>
