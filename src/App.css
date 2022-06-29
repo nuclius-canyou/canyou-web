@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.nav_logo {
+  width: 164px;
+  height: 137px;
+  margin-left: 56px;
+  margin-top: 48px;
+}
+
+.landing_container {
+  margin: 30px auto;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+.landing_content {
+  width: 45%;
+  color: white;
+}
+
+.landing_content h1 {
+  font-size: 64px;
+}
+
+.landing_content h2 {
+  font-size: 32px;
+}
+
+.app_store {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}

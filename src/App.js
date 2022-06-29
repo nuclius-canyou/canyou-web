@@ -5,10 +5,12 @@ import NotFound from './pages/NotFound'
 import Terms from './pages/Terms'
 import Privacy from './pages/Privacy'
 import Support from './pages/Support'
+import Nav from './component/Nav'
 
 function App() {
   return (
     <BrowserRouter>
+      <Nav />
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/terms' element={<Terms />} />
