@@ -6,6 +6,7 @@ import Terms from './pages/Terms'
 import Privacy from './pages/Privacy'
 import Support from './pages/Support'
 import Nav from './component/Nav'
+import Footer from './component/Footer'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/support' element={<Support />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }
