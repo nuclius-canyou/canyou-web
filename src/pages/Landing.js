@@ -15,8 +15,7 @@ const MuiContainer = styled(Container)(({ theme }) => ({
     marginTop: "0px",
     height: "100%",
   },
-
-  "& .pic": {
+  "& .video_box": {
     position: "relative",
     height: "630px",
     width: "320px",
@@ -29,7 +28,7 @@ const MuiContainer = styled(Container)(({ theme }) => ({
       height: 550,
       width: 260,
     },
-    "&>img": {
+    "& > video": {
       position: "absolute",
       width: "100%",
       height: "100%",
@@ -102,8 +101,14 @@ const Landing = () => {
           xs={12} sm={12} md={6}
           order={{ xs: 2, sm: 2, md: 1 }}
         >
-          <div className="pic">
-            <img src={AppImage} alt='app image' />
+          <div className="video_box">
+            <video
+              src={"https://res.cloudinary.com/bestimate/video/upload/v1656698074/CanYou.mp4"}
+              autoPlay={"autoplay"}
+              muted
+              // controls="hidden"
+              loop
+            />
           </div>
         </Grid>
         <Grid item
