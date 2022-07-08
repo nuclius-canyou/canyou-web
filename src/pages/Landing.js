@@ -114,8 +114,7 @@ const Landing = () => {
               <Typography variant='h1'>Try CanYou.</Typography>
             </Box>
             <Box className='main_text'>
-              <Typography>Turn Every Ask.</Typography>
-
+              <Typography>Turn Every Ask</Typography>
               <Typography>Into A Task.</Typography>
             </Box>
             <Box className='appStore'>
