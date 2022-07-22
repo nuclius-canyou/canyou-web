@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+/* .app-container {
+  height: 99vh;
+} */
 
 .App-logo {
   height: 40vmin;
@@ -115,4 +118,9 @@
 
 .link:hover {
   color: orange;
+}
+
+.downlod-icons {
+  width: 176px;
+  height: 46px;
 }

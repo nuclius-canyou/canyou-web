@@ -118,8 +118,8 @@ const Landing = () => {
               <Typography>Into A Task.</Typography>
             </Box>
             <Box className='appStore'>
-              <img src={Play} alt='Google Play' />
-              <img src={Apple} alt='Apple Store' />
+              <img src={Play} alt='Google Play' className='downlod-icons' />
+              <img src={Apple} alt='Apple Store' className='downlod-icons' />
             </Box>
           </div>
         </Grid>
