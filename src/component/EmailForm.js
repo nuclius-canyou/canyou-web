@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import validator from 'validator'
 
 const EmailForm = () => {
-  const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
   const emailRef = useRef()
 
@@ -14,8 +13,8 @@ const EmailForm = () => {
     const isValid = validator.isEmail(emailRef.current.value)
     setLoading(true)
     try {
-      if (!isValid) {
-        toast.error('🚫 Invalid email address', {
+      if (emailRef.current.value.length == 0) {
+        toast.error('🚫 Empty email', {
           position: 'top-right',
           autoClose: 3000,
           hideProgressBar: true,
@@ -24,6 +23,20 @@ const EmailForm = () => {
           draggable: true,
           progress: undefined,
         })
+        setLoading(false)
+        return
+      }
+      if (!isValid) {
+        toast.error('🚫 Please enter a valid email', {
+          position: 'top-right',
+          autoClose: 3000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+        setLoading(false)
         return
       }
       await handleNewEmail(emailRef.current.value)
@@ -37,6 +50,7 @@ const EmailForm = () => {
         progress: undefined,
       })
       emailRef.current.value = ''
+      setLoading(false)
     } catch (error) {
       toast.error('🚫 Unable to submit email', {
         position: 'top-right',
@@ -62,7 +76,9 @@ const EmailForm = () => {
           ref={emailRef}
           placeholder='Email Address'
         />
-        <button onClick={handleSubmit}>Get It!</button>
+        <button disabled={loading} onClick={handleSubmit}>
+          Get It!
+        </button>
       </Box>
       <Typography sx={{ fontSize: '10px', width: '300px' }}>
         By clicking “Get it!”, I acknowledge that I have read the Privacy Policy
