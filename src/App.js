@@ -27,7 +27,7 @@ const AppContainer = styled(Box)(() => ({
 
 function App() {
   return (
-    <div class='app-container'>
+    <div className='app-container'>
       <BrowserRouter>
         <AppContainer>
           <Nav />
