@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react'
 import { Box, Typography } from '@mui/material'
 import { handleNewEmail } from '../utils'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const EmailForm = () => {
   const [email, setEmail] = useState('')
@@ -11,8 +13,25 @@ const EmailForm = () => {
     setLoading(true)
     try {
       await handleNewEmail(emailRef.current.value)
+      toast.success('🚀 You have been added successfully', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     } catch (error) {
-      alert('There was an error submitting your email.')
+      toast.error('🚫 Unable to submit email', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     }
     setLoading(false)
   }
@@ -28,6 +47,7 @@ const EmailForm = () => {
         By clicking “Get it!”, I acknowledge that I have read the Privacy Policy
         and agree to the Terms of Service.
       </Typography>
+      <ToastContainer />
     </Box>
   )
 }
