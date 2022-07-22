@@ -124,3 +124,35 @@
   width: 176px;
   height: 46px;
 }
+
+.email-form {
+  display: flex;
+  justify-content: baseline;
+  margin: 6px 0;
+}
+
+.email-form input {
+  width: 210px;
+  height: 32px;
+  border: none;
+  border-radius: 7px 0 0 7px;
+}
+
+.email-form input::placeholder {
+  padding-left: 6px;
+}
+
+.email-form button {
+  width: 110px;
+  height: 34px;
+  border: none;
+  background: #f4173a;
+  color: #fff;
+  border: none;
+  border-radius: 0 7px 7px 0;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}

@@ -3,6 +3,7 @@ import Play from '../assets/play.png'
 import Apple from '../assets/apple.png'
 import { styled } from '@mui/material/styles'
 import { Box, Container, Grid, Typography } from '@mui/material'
+import EmailForm from '../component/EmailForm'
 
 const MuiContainer = styled(Container)(({ theme }) => ({
   marginTop: '10px',
@@ -117,9 +118,18 @@ const Landing = () => {
               <Typography>Turn Every Ask</Typography>
               <Typography>Into A Task.</Typography>
             </Box>
+            <EmailForm />
             <Box className='appStore'>
-              <img src={Play} alt='Google Play' className='downlod-icons' />
-              <img src={Apple} alt='Apple Store' className='downlod-icons' />
+              <img
+                src={Play}
+                alt='Google Play'
+                className='downlod-icons hidden'
+              />
+              <img
+                src={Apple}
+                alt='Apple Store'
+                className='downlod-icons hidden'
+              />
             </Box>
           </div>
         </Grid>
