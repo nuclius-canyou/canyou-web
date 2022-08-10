@@ -1,9 +1,59 @@
 import { useState, useRef } from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Button, TextField } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import { handleNewEmail } from '../utils'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import validator from 'validator'
+
+const EmailContainerBox = styled(Box)(({ theme }) => ({
+  // width: '500px',
+  "& > *": {
+    marginBottom: "0.8rem",
+  },
+  [theme.breakpoints.down('md')]: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  "& .main": {
+    marginRight: "5px",
+    marginLeft: "5px",
+    "& .email-form": {
+      maxWidth: "380px",
+      display: "flex",
+      alignItems: "stretch",
+      marginBottom: "10px",
+      "& .MuiFormControl-root": {
+        flex: 1,
+        minWidth: "180px",
+        [theme.breakpoints.up('sm')]: {
+          minWidth: "315px",
+        },
+        "& input": {
+          fontSize: "16px",
+          [theme.breakpoints.down('sm')]: {
+            fontSize: "12px",
+          },
+        },
+      },
+      "& > button": {
+        background: "#f4173a",
+        borderRadius: "0px 6px 6px 0px",
+        [theme.breakpoints.up('sm')]: {
+          minWidth: "90px"
+        },
+      },
+    },
+    "& p": {
+      minWidth: "280px",
+      maxWidth: "330px",
+    }
+  }
+
+}))
+
+
 
 const EmailForm = () => {
   const [loading, setLoading] = useState(false)
@@ -67,25 +117,37 @@ const EmailForm = () => {
   }
 
   return (
-    <Box sx={{ width: '500px' }}>
+    <EmailContainerBox >
       <Typography>Get the app when it launches!</Typography>
-      <Box className='email-form'>
-        <input
-          type='email'
-          className='input-text'
-          ref={emailRef}
-          placeholder='Email Address'
-        />
-        <button disabled={loading} onClick={handleSubmit}>
-          Get It!
-        </button>
+      <Box className="main">
+        <Box className='email-form'>
+          <TextField
+            type='email'
+            className='input-text'
+            ref={emailRef}
+            placeholder='Email Address'
+            variant='filled'
+            inputProps={{ sx: { backgroundColor: "#fff", borderRadius: "6px 0 0 6px", padding: "10px 15px" } }}
+            InputProps={{ disableUnderline: true, sx: { backgroundColor: "#fff", borderRadius: "6px 0 0 6px", boxShadow: 2 } }}
+            size="small"
+          />
+          <Button
+            disabled={loading}
+            onClick={handleSubmit}
+            variant="contained"
+            color="error"
+            sx={{ boxShadow: 2 }}
+          >
+            Get It!
+          </Button>
+        </Box>
+        <Typography sx={{ fontSize: '10px', }}>
+          By clicking “Get it!”, I acknowledge that I have read the Privacy Policy
+          and agree to the Terms of Service.
+        </Typography>
       </Box>
-      <Typography sx={{ fontSize: '10px', width: '300px' }}>
-        By clicking “Get it!”, I acknowledge that I have read the Privacy Policy
-        and agree to the Terms of Service.
-      </Typography>
       <ToastContainer />
-    </Box>
+    </EmailContainerBox>
   )
 }
 
