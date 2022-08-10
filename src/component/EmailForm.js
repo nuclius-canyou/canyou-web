@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import validator from 'validator'
 
 const EmailContainerBox = styled(Box)(({ theme }) => ({
-  // width: '500px',
   "& > *": {
     marginBottom: "0.8rem",
   },
@@ -17,8 +16,10 @@ const EmailContainerBox = styled(Box)(({ theme }) => ({
     alignItems: "center"
   },
   "& .main": {
-    marginRight: "5px",
-    marginLeft: "5px",
+    [theme.breakpoints.down('sm')]: {
+      marginRight: "5px",
+      marginLeft: "5px",
+    },
     "& .email-form": {
       maxWidth: "380px",
       display: "flex",
