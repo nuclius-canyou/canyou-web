@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
+
 /* .app-container {
   height: 99vh;
 } */
@@ -35,6 +36,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -125,7 +127,7 @@
   height: 46px;
 }
 
-.email-form {
+/* .email-form {
   display: flex;
   justify-content: baseline;
   margin: 6px 0;
@@ -158,7 +160,7 @@
   border-radius: 0 7px 7px 0;
   font-size: 20px;
   cursor: pointer;
-}
+} */
 
 .hidden {
   display: none;
