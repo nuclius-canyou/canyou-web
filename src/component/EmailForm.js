@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Box, Typography, Button, TextField } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { handleNewEmail } from '../utils'
@@ -58,13 +58,13 @@ const EmailContainerBox = styled(Box)(({ theme }) => ({
 
 const EmailForm = () => {
   const [loading, setLoading] = useState(false)
-  const emailRef = useRef()
+  const [email, setEmail] = useState("")
 
   const handleSubmit = async () => {
-    const isValid = validator.isEmail(emailRef.current.value)
+    const isValid = validator.isEmail(email)
     setLoading(true)
     try {
-      if (emailRef.current.value.length == 0) {
+      if (email.length == 0) {
         toast.error('🚫 Empty email', {
           position: 'top-right',
           autoClose: 3000,
@@ -90,7 +90,7 @@ const EmailForm = () => {
         setLoading(false)
         return
       }
-      await handleNewEmail(emailRef.current.value)
+      await handleNewEmail(email)
       toast.success('🚀 You have been added successfully', {
         position: 'top-right',
         autoClose: 3000,
@@ -100,7 +100,7 @@ const EmailForm = () => {
         draggable: true,
         progress: undefined,
       })
-      emailRef.current.value = ''
+      setEmail("")
       setLoading(false)
     } catch (error) {
       toast.error('🚫 Unable to submit email', {
@@ -112,7 +112,7 @@ const EmailForm = () => {
         draggable: true,
         progress: undefined,
       })
-      emailRef.current.value = ''
+      setEmail("")
     }
     setLoading(false)
   }
@@ -125,12 +125,13 @@ const EmailForm = () => {
           <TextField
             type='email'
             className='input-text'
-            ref={emailRef}
             placeholder='Email Address'
             variant='filled'
             inputProps={{ sx: { backgroundColor: "#fff", borderRadius: "6px 0 0 6px", padding: "10px 15px" } }}
             InputProps={{ disableUnderline: true, sx: { backgroundColor: "#fff", borderRadius: "6px 0 0 6px", boxShadow: 2 } }}
             size="small"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
           <Button
             disabled={loading}
