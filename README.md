@@ -1,5 +1,6 @@
 # CanYou
-## Web application companion to the mobile app
+## Web application companion to the mobile app on iOS and Android.
+
 
 
 
