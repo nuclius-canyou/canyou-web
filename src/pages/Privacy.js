@@ -43,7 +43,7 @@ const Privacy = () => {
             <Typography variant='h2'>Privacy Policy</Typography>
           </Box>
           <Box className='content'>
-            <p style={{ marginBottom: '20px' }}>Last updated July 1, 2022</p>
+            <p style={{ marginBottom: '20px' }}>Last updated MAr 15, 2023</p>
             <p>
               This privacy notice for CanYou Inc. (doing business as CanYou) (&quot;CanYou,&quot;
               &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), describes how and why we might
