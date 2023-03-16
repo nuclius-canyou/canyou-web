@@ -216,8 +216,10 @@ const Privacy = () => {
               <li>
                 <p>debit/credit card numbers</p>
               </li>
+              <li>
+                <p>Recent call logs</p>
+              </li>
             </ul>
-            <p>Sensitive Information.&nbsp; See Personal Information Provided by You</p>
             <p>
               <br />
             </p>
